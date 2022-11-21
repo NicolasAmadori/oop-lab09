@@ -34,8 +34,8 @@ public class MultiThreadedSumMatrix implements SumMatrix{
          * @param nelem
          *            the no. of elems to sum up for this worker
          */
-        Worker(final double[][] matrix, final int startRow, final int startColumn, final int nelem) {
-            super();
+        Worker(final double[][] matrix, final int startRow, final int startColumn, final int nelem) {            
+            super();            
             this.matrix = matrix;
             this.startRow = startRow;
             this.startColumn = startColumn;
@@ -66,6 +66,10 @@ public class MultiThreadedSumMatrix implements SumMatrix{
 
     @Override
     public double sum(double[][] matrix) {
+        if(matrix == null) {
+            return 0;
+        }
+        
         final int nElements = matrix.length * matrix[0].length;
         final int size = nElements % nthread + nElements / nthread;
         int row = 0, col = 0;
