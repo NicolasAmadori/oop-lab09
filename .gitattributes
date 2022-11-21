@@ -1,0 +1,4 @@
+*.text=auto eol=lf
+*.[Bb][Aa][Tt] text eol=crlf
+*.[Cc][Mm][Dd] text eol=crlf
+*.[Pp][Ss]1 text eol=crlf
